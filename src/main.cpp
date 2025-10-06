@@ -19,6 +19,7 @@
 
 
 int i = 1;
+int sing = 1;
 
 
 void setup() {
@@ -33,10 +34,11 @@ void loop() {
   analogWrite(5, int((255 / 10) * i));
   analogWrite(6, int((255 / 10) * i));
 
-  if (i <= 10)
-    i += 1;
-  else
-    i = 1;
+  i += sing;
+  if (i >= 10)
+    sing = -1;
+  else if (i <= 1)
+    sing = 1;
 
-  delay(50);
+  delay(20);
 }
